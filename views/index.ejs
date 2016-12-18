@@ -1,0 +1,38 @@
+
+<h2><%= title %></h2>
+
+
+<br>
+<ul>
+<% lang.forEach(function(lan){ %>
+
+<li> <%= lan.name %><%= lan.version %> </li>
+
+<% }) %>
+</ul>
+<% if(errors != undefined ){ %>
+<ul>
+<% errors.forEach(function(error){ %>
+
+<li><%= error.msg %></li>
+
+<% }) %>
+</ul>
+
+<% } %>
+
+<form method="POST" action="/users/add">
+	<table>
+		<tr>
+			<th>Name</th><td><input type="text" name="name" placeholder="Customer Name"/></td>
+		</tr>
+		<tr>
+			<th>Email</th><td><input type="text" name="email" placeholder="Email"></td>
+		</tr>
+		<tr>
+			<th>Address</th> <td><input type="text" name="address" placeholder="address"></td>
+		</tr>
+		<tr><th><input type="submit" value="add"></th></tr>
+	</table>
+
+</form>
